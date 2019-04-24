@@ -16,7 +16,7 @@
 website - see [https://mikeski.net/subnet-calc/](https://mikeski.net/subnet-calc/) **
  
 ```bash
-  git clone ...
+  git clone https://github.com/mikebski/angularjs-webpack-subnet-calc.git
   npm install
   npm start
 ```
