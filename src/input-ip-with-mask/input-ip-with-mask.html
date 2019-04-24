@@ -1,0 +1,53 @@
+<div class="ip-input">
+  <div class="form-group">
+    <label for="ip">Enter your IP and Mask (e.g. 10.10.10.0/24)</label>
+    <input id="ip" name="ip" class="form-control" ng-keyup='keyup($event)' type='text' ng-model="value"
+           placeholder='192.168.0.0/24'/>
+  </div>
+  <div ng-class="{'d-none': isValid, 'mt-3': true}">
+    <p class="alert alert-danger">
+      Invalid Network Definition
+    </p>
+  </div>
+  <div ng-class="{'d-none': !isValid, 'mt-3': true}">
+    <table class="table table-striped table-condensed">
+      <!--    <tr>-->
+      <!--      <td>-->
+      <!--        Valid-->
+      <!--      </td>-->
+      <!--      <td colspan="3">-->
+      <!--        {{isValid ? "OK" : "NOK"}}-->
+      <!--      </td>-->
+      <!--    </tr>-->
+      <!--    <tr>-->
+      <!--      <td colspan="3">IP Integer</td>-->
+      <!--      <td>{{ipInt}}</td>-->
+      <!--    </tr>-->
+      <tr>
+        <th>Masked Bits</th>
+        <th>Unmasked Bits</th>
+        <th>Address Count</th>
+      </tr>
+      <tr>
+        <td>{{netMask}} bits</td>
+        <td>{{netBits}} bits</td>
+        <td>{{addressCount}} IP addresses</td>
+      </tr>
+      <tr>
+        <th colspan="3">Network Details</th>
+      </tr>
+      <tr>
+        <th>Address Range</th>
+        <td colspan="2">{{firstAddress}} - {{lastAddress}}</td>
+      </tr>
+      <tr>
+        <th>Network Address</th>
+        <td colspan="2">{{networkAddress}}</td>
+      </tr>
+      <tr>
+        <th>Broadcast Address</th>
+        <td colspan="2">{{broadcastAddress}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
