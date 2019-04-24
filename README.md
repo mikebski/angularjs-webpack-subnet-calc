@@ -1,5 +1,15 @@
 # Angular js Subnet Claculator
 
+## About
+
+This is a simple demonstration of webpack and how to make it work with angularjs
+
+All of the examples I could find were old, so this one is Angularjs 1.7 and Webpack 4
+
+It also contains a basic widget for calculating network ranges give an IP/Subnet
+specification such as `192.168.1.0/24` for a `24 `bit mask of the network
+`192.168.1.0`
+
 ## Demo
 
 [https://mikeski.net/subnet-calc/](https://mikeski.net/subnet-calc/)
@@ -22,18 +32,6 @@ website - see [https://mikeski.net/subnet-calc/](https://mikeski.net/subnet-calc
 ```
 
 Then, point your browser at [http://localhost:8080](http://localhost:8080) and off you go.
-
-## About
-
-This is a simple demonstration of webpack and how to make it work with angularjs
-
-All of the examples I could find were old, so this one is Angularjs 1.7 and Webpack 4
-
-It also contains a basic widget for calculating network ranges give an IP/Subnet
-specification such as `192.168.1.0/24` for a `24 `bit mask of the network
-`192.168.1.0`
-
-![Screenshot](images/screenshot.png)
 
 ## License
 
