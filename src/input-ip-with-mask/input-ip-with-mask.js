@@ -9,7 +9,7 @@ let InputIPWithMask = function() {
       p = n.indexOf('.')
     return n.replace(
       /\d(?=(?:\d{3})+(?:\.|$))/g,
-      (m, i) => p < 0 || i < p ? `${m},` : m
+      (m, i) => p < 0 || i < p ? `${m}` : m
     )
   }
 
@@ -38,7 +38,8 @@ let InputIPWithMask = function() {
       scope.broadcastAddress = null
 
       function int2ip (ipInt) {
-        return ( (ipInt>>>24) +'.' + (ipInt>>16 & 255) +'.' + (ipInt>>8 & 255) +'.' + (ipInt & 255) );
+        let ret = ( (ipInt>>>24) +'.' + (ipInt>>16 & 255) +'.' + (ipInt>>8 & 255) +'.' + (ipInt & 255) )
+        return ret;
       }
 
       scope.keyup = (event) => {
@@ -55,9 +56,9 @@ let InputIPWithMask = function() {
           scope.netBits = 32 - scope.netMask
           scope.addressCount = formatNumber(2 ** scope.netBits - 2)
           scope.firstAddress = int2ip(ipInt + 1)
-          scope.lastAddress = int2ip(ipInt + scope.addressCount)
+          scope.lastAddress = int2ip(parseInt(ipInt) + parseInt(scope.addressCount))
           scope.networkAddress = int2ip(ipInt)
-          scope.broadcastAddress = int2ip(ipInt + scope.addressCount + 1)
+          scope.broadcastAddress = int2ip(parseInt(ipInt) + parseInt(scope.addressCount) + 1)
           scope.ipInt = ipInt
         }
       };
